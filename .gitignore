@@ -1,16 +1,12 @@
 # Data files
-data/raw/
-*.csv
+data/
 *.xlsx
+*.csv
 
 # Python
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
-*.egg-info/
-dist/
 
-# Environment
-.env
-venv/
+# System
 .DS_Store
