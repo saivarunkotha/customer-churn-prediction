@@ -1,7 +1,6 @@
-# Data files
-data/
-*.xlsx
-*.csv
+# Raw data files — too large
+data/*.xlsx
+data/*.csv
 
 # Python
 __pycache__/
