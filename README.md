@@ -1,6 +1,6 @@
 # Customer Churn Prediction
 
-> An end-to-end machine learning project that predicts whether a telecom customer will churn, built with Python, scikit-learn, XGBoost, SHAP, and deployed as an interactive Streamlit web app.
+> An end-to-end machine learning project that predicts whether a telecom customer will churn, built with Python, scikit learn, XGBoost, SHAP, and deployed as an interactive Streamlit web app.
 
 **Author:** Saivarun Kotha — MS Data Science @ UMBC  
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-kothasaivarun-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/kothasaivarun/)
@@ -10,7 +10,7 @@
 
 ## Problem statement
 
-Customer churn is one of the most costly problems in the telecom industry — acquiring a new customer costs 5–10x more than retaining an existing one. This project builds an automated churn prediction system that:
+Customer churn is one of the most costly problems in the telecom industry acquiring a new customer costs 5–10x more than retaining an existing one. This project builds an automated churn prediction system that:
 
 - Identifies customers at high risk of leaving before they churn
 - Explains *why* a customer is at risk using SHAP explainability
@@ -25,16 +25,16 @@ Customer churn is one of the most costly problems in the telecom industry — ac
 | Source | IBM Telco Customer Churn (Kaggle) |
 | Files | 6 Excel files merged into one dataset |
 | Size | 7,043 customers · 44 features after merging |
-| Target | `Churn Label` — Yes / No |
+| Target | `Churn Label` Yes / No |
 | Churn rate | 26.5% churned · 73.5% retained |
 
 **Data sources merged:**
-- `Telco_customer_churn.xlsx` — main customer and service data
-- `Telco_customer_churn_demographics.xlsx` — age, marital status
-- `Telco_customer_churn_services.xlsx` — service usage and revenue
-- `Telco_customer_churn_status.xlsx` — satisfaction scores, churn reasons
-- `Telco_customer_churn_location.xlsx` — geographic data
-- `Telco_customer_churn_population.xlsx` — zip code population data
+- `Telco_customer_churn.xlsx` : main customer and service data
+- `Telco_customer_churn_demographics.xlsx`: age, marital status
+- `Telco_customer_churn_services.xlsx`: service usage and revenue
+- `Telco_customer_churn_status.xlsx`: satisfaction scores, churn reasons
+- `Telco_customer_churn_location.xlsx`: geographic data
+- `Telco_customer_churn_population.xlsx` : zip code population data
 
 ---
 
@@ -44,17 +44,17 @@ Customer churn is one of the most costly problems in the telecom industry — ac
 - Merged 6 data sources on `CustomerID`
 - Analyzed churn rate by contract type, satisfaction score, tenure, and age
 - Visualized top 10 churn reasons and churn categories
-- Key finding: month-to-month contracts, low satisfaction scores, and short tenure are the strongest churn signals
+- Key finding: month to month contracts, low satisfaction scores, and short tenure are the strongest churn signals
 
 ### 2. Feature engineering
 Three new features created from existing data:
-- `Tenure Group` — binned tenure into 4 groups (0–12, 13–24, 25–48, 49–72 months)
-- `Num Services` — count of active add-on services per customer
-- `Revenue per GB` — monthly charge divided by average GB download
+- `Tenure Group` : binned tenure into 4 groups (0–12, 13–24, 25–48, 49–72 months)
+- `Num Services` : count of active add on services per customer
+- `Revenue per GB` : monthly charge divided by average GB download
 
 ### 3. Preprocessing
 - Binary encoding for Yes/No columns
-- Label encoding for multi-class categorical columns
+- Label encoding for multi class categorical columns
 - Class imbalance handled using `class_weight='balanced'`
 - 80/20 stratified train/test split
 
@@ -68,7 +68,7 @@ Three models trained and evaluated:
 | Random Forest | 95.39% | 0.9640 | 0.8583 | 0.9081 | 0.9835 |
 | XGBoost | 95.10% | 0.9272 | 0.8850 | 0.9056 | 0.9869 |
 
-**Best model: Logistic Regression** — highest AUC-ROC (0.9903) and Recall, meaning it correctly identifies the most at-risk customers.
+**Best model: Logistic Regression** — highest AUC-ROC (0.9903) and Recall, meaning it correctly identifies the most at risk customers.
 
 ### 5. Explainability (SHAP)
 SHAP TreeExplainer used to identify the top drivers of churn:
@@ -137,8 +137,8 @@ customer-churn-prediction/
 ## Key findings
 
 - **26.5% churn rate** — moderate class imbalance addressed with balanced class weights
-- **Month-to-month customers** churn at 3x the rate of two-year contract customers
-- **Newer customers churn more** — the first 12 months are the highest-risk period
+- **Month-to-month customers** churn at 3x the rate of 2 year contract customers
+- **Newer customers churn more** — the first 12 months are the highest risk period
 - **Satisfaction score is the #1 predictor** — customers scoring 1-2 are overwhelmingly likely to churn
 - **Referrals signal loyalty** — customers who refer friends almost never churn
 - **Age is not a significant predictor** — churn rate is consistent across all age groups
