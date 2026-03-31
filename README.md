@@ -88,6 +88,8 @@ Interactive Streamlit app allowing real-time churn prediction with:
 ## Streamlit app
 
 Enter customer details → get instant churn probability + retention recommendations.
+![App Screenshot](data/app_screenshot_1.png)
+![App Screenshot](data/app_screenshot_2.png)
 
 **To run locally:**
 
